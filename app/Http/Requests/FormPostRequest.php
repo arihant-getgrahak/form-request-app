@@ -11,7 +11,7 @@ class FormPostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,31 @@ class FormPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "name" => "required| max:255|string",
+            "email" => "required|email|unique:users,email",
+            "username" => "required|unique:users,username|min:3",
+            "password" => "required|confirmed",
+            "password_confirmation" => "required | same:password",
+            "phone_number" => "required|numeric|digits:10",
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            "name.required" => "Name is required",
+            "email.required" => "Email is required",
+            "username.required" => "Username is required",
+            "password.required" => "Password is required",
+            "phone_number.required" => "Phone number is required",
+            "password_confirmation.required" => "Password confirmation is required",
+            "password_confirmation.same" => "Password confirmation must be same with password",
+            "phone_number.digits" => "Phone number must be 10 digits",
+            "phone_number.numeric" => "Phone number must be numeric",
+            "email.unique" => "Email already exists",
+            "username.unique" => "Username already exists",
+            "email.email" => "Email must be valid",
+            "username.min" => "Username must be at least 3 characters",
         ];
     }
 }
