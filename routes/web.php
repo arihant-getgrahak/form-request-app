@@ -22,6 +22,7 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get("/dashboard", [DashboardController::class, "index"]);
+    Route::get("/logout", [DashboardController::class, "logout"])->name("logout");
 });
 
 Route::group(['middleware' => 'custom_auth.users'], function () {

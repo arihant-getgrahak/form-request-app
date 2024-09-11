@@ -10,4 +10,8 @@ class DashboardController extends Controller
     public function index(){
         return view('dashboard');
     }
+    public function logout(){
+        auth()->logout();
+        return redirect('/auth/login');
+    }
 }

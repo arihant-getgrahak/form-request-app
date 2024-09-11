@@ -38,17 +38,6 @@ class CustomAuth implements AuthInterface
             'message' => $checkUserExist->password
 
         ];
-        // if (Hash::check($data['password'], Auth::user()->password)) {
-        //     return [
-        //         'success' => true,
-        //         'message' => 'User Login Successfully..'
-        //     ];
-        // }
-
-        // return [
-        //     'success' => false,
-        //     'message' => 'Email or Password not valid'
-        // ];
     }
 
     public function register(array $data): array
