@@ -80,6 +80,6 @@ class CustomAuth implements AuthInterface
 
     public function logout(): void
     {
-        $this->session->remove("user_id");
+        $this->session->remove("user");
     }
 }
