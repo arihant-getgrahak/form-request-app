@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\CustomAuth\CRegisterController;
 use App\Http\Controllers\CustomAuth\CLoginController;
 use App\Http\Controllers\CustomAuth\CDashboardController;
+use App\Http\Controllers\ResourceController;
 
 
 Route::group(['middleware' => 'guest'], function () {
@@ -35,3 +36,8 @@ Route::get('/custom_auth/login', [CLoginController::class, "index"]);
 
 Route::post("/custom_auth/register", [CRegisterController::class, 'register'])->name("custom.register");
 Route::post("/custom_auth/login", [CLoginController::class, 'login'])->name("custom.register");
+
+Route::get("/resource", function () {
+    return view("resource");
+});
+Route::get("/resource", [ResourceController::class, 'display']);
