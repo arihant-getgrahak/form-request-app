@@ -17,14 +17,14 @@ class ResourceController extends Controller
             [
                 "name" => "Laravel::Auth",
                 "routes" => [
-                    "desc" => ["Login", "regiter", "dashborad"],
+                    "desc" => ["Login", "regiter", "dashborad(You need to login first)"],
                     "url" => ["/auth/login", "/auth/register", "/dashboard"],
                 ],
             ],
             [
                 "name" => "Custom::Auth",
                 "routes" => [
-                    "desc" => ["Login", "regiter", "dashborad"],
+                    "desc" => ["Login", "regiter", "dashborad(You need to login first)"],
                     "url" => ["/custom_auth/login", "/custom_auth/register", "/custom_dashboard"]
                 ],
             ]
