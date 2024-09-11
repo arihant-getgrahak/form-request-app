@@ -15,7 +15,7 @@ class Custom_Auth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (session()->has('key')) {
+        if (!session()->has('user')) {
             return redirect('/custom_auth/login');
         }
         return $next($request);

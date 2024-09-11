@@ -30,7 +30,6 @@ Route::group(['middleware' => 'custom_auth.users'], function () {
     Route::get("/custom_auth/logout", [CDashboardController::class, "logout"])->name("custom_auth.logout");
 });
 
-
 Route::get('/custom_auth/register', [CRegisterController::class, "index"]);
 Route::get('/custom_auth/login', [CLoginController::class, "index"]);
 
