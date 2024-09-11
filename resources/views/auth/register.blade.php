@@ -63,7 +63,7 @@
             alert("{{ session('success') }}");
         }
         if ("{{ session('error') }}") {
-            console.log("{{ session('error') }}");
+            alert("{{ session('error') }}");
         }
     </script>
 </body>
