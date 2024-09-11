@@ -55,7 +55,7 @@
             </div>
             <button type="submit" class="w-full border border-black p-1 rounded-md bg-blue-500 text-white">Submit</button>
         </form>
-        <p><a class="text-blue-500 underline" href="{{ url('auth/login') }}">Login</a></p>
+        <p><a class="text-blue-500 underline" href="{{ url('custom_auth/login') }}">Login</a></p>
     </div>
 
     <script>
